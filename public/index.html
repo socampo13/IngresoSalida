@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Oficina</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Registro de Oficina</h1>
+    <form id="registro-form">
+      <label for="identificacion">Número de identificación:</label>
+      <input type="text" id="identificacion" name="identificacion" required>
+      
+      <button type="button" id="ingreso-btn">Registrar Ingreso</button>
+      <button type="button" id="salida-btn">Registrar Salida</button>
+    </form>
+    
+    <div id="mensaje"></div>
+    <div id="tiempoTranscurrido"></div>
+  </div>
+
+  <script src="buttons.js"></script>
+</body>
+</html>
