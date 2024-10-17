@@ -2,13 +2,13 @@
 document.getElementById('identificacion').addEventListener('input', function (e) {
   // Reemplazamos cualquier cosa que no sea un digito del 0 al 9
   this.value = this.value.replace(/[^0-9]/g, '')
-})
+});
 
 // Validación de longitud de identificación
 function validarIdentificacion(identificacion){
   const regex = /^[0-9]{8,10}$/;
   return regex.test(identificacion);
-}
+};
 
 // Registrar ingreso
 document.getElementById('ingreso-btn').addEventListener('click', () => {
