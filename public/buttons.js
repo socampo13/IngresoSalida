@@ -13,6 +13,7 @@ function validarIdentificacion(identificacion){
 // Registrar ingreso
 document.getElementById('ingreso-btn').addEventListener('click', () => {
     const identificacion = document.getElementById('identificacion').value;
+    const email = document.getElementById('email').value;
     
     if (!validarIdentificacion(identificacion)){
       document.getElementById('mensaje').textContent = 'Ingresa un numero de identificacion valido';
@@ -22,7 +23,7 @@ document.getElementById('ingreso-btn').addEventListener('click', () => {
     fetch('/api/registro/ingreso', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ identificacion })
+        body: JSON.stringify({ identificacion, email })
     })
     .then(response => response.json())
     .then(data => {
@@ -31,6 +32,7 @@ document.getElementById('ingreso-btn').addEventListener('click', () => {
 
         // Limpiar el input luego de hacer click
         document.getElementById('identificacion').value = '';
+        document.getElementById('email').value = '';
     })
     .catch(error => {
         console.error('Error:', error);
@@ -41,6 +43,7 @@ document.getElementById('ingreso-btn').addEventListener('click', () => {
 //Registrar salida
 document.getElementById('salida-btn').addEventListener('click', () => {
     const identificacion = document.getElementById('identificacion').value;
+    const email = document.getElementById('email').value;
     // Validar cantidad de numeros
     if (!validarIdentificacion(identificacion)){
       document.getElementById('mensaje').textContent = 'Ingresa un numero de identificacion valido';
@@ -50,7 +53,7 @@ document.getElementById('salida-btn').addEventListener('click', () => {
     fetch('/api/registro/salida', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ identificacion })
+      body: JSON.stringify({ identificacion, email })
     })
     .then(response => response.json())
     .then(data => {
@@ -65,6 +68,7 @@ document.getElementById('salida-btn').addEventListener('click', () => {
 
       // Limpiar el campo de texto de identificacion 
       document.getElementById('identificacion').value = '';
+      document.getElementById('email').value = '';
     })
     .catch(error => {
       console.error('Error:', error);
