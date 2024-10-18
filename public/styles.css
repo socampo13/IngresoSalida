@@ -100,7 +100,7 @@ button {
 }
 
 /* Efecto de fondo animado */
-@keyframes colorChange {
+/* @keyframes colorChange {
   0% {
     background-color: #FC3723;
   }
@@ -110,9 +110,9 @@ button {
   100% {
     background-color: #FCA723;
   }
-}
+} */
 
-#mensaje {
+/* #mensaje {
   font-size: 1.5rem;
   color: #333;
   padding: 10px;
@@ -122,10 +122,10 @@ button {
   transition: all 0.5s ease-in-out;
   text-align: center;
   margin-top: 20px;
-}
+} */
 
 /* Estilo cuando se activa la animación */
-#mensaje.success {
+/* #mensaje.success {
   animation: bounceIn 1s ease forwards, colorChange 3s ease-in-out infinite;
 }
 
@@ -134,9 +134,9 @@ button {
   font-size: 1.2rem;
   color: #333;
   text-align: center;
-}
+} */
 
-.container {
+/* .container {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
@@ -145,7 +145,7 @@ button {
 button {
   margin-top: 20px;
   padding: 10px 10px;
-  background-color: #4CAF50;
+  background-color: #00529b;
   color: white;
   border: none;
   border-radius: 5px;
@@ -155,5 +155,7 @@ button {
 }
 
 button:hover {
-  background-color: #FF9800;
-}
+  background-color: #00529b;
+} */
+
+
