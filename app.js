@@ -41,7 +41,7 @@ app.post('/api/registro/ingreso', (req, res) => {
             console.error('Error al registrar ingreso:', err.message);
             return res.status(500).json({ error: 'Error en la base de datos' });
         }
-        res.json({ message: 'Ingreso registrado correctamente', id: this.lastID });
+        res.json({ message: 'Ingreso registrado correctamente. Buen dia!', id: this.lastID });
     });
 });
 
@@ -77,7 +77,7 @@ app.post('/api/registro/salida', (req, res) => {
                 return res.status(500).json({ error: 'Error al registrar salida' });
             }
             res.json({
-                message: 'Salida registrada correctamente',
+                message: 'Salida registrada correctamente. Que descanses!',
                 tiempoTranscurrido: `Tiempo registrado: ${diferenciaHoras} horas y ${diferenciaMinutos} minutos`
             });
         });
