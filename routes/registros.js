@@ -16,15 +16,15 @@ const db = new sqlite3.Database('./db/registro.db', (err) => {
 /* const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'correo@gmail.com',
-        pass: 'contraseña'
+        user: 'mail@mail.com',
+        pass: 'password'
     }
 });
 
 // Función para enviar correos
 function enviarCorreo(identificacion, email, accion) {
     const mailOptions = {
-        from: 'correo@gmail.com',
+        from: 'mail@mail.com',
         to: email,
         subject: `Registro de ${accion}`,
         text: `La persona con ID ${identificacion} ha registrado su ${accion} correctamente.`
@@ -36,7 +36,7 @@ function enviarCorreo(identificacion, email, accion) {
         }
         console.log('Correo enviado: ' + info.response);
     });
-} */
+}  */
 
 // Ruta para registrar ingreso
 router.post('registro/ingreso', (req, res) => {
