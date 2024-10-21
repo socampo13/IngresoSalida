@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
+/* const nodemailer = require('nodemailer'); */
 
 // Conectar a la base de datos
 const db = new sqlite3.Database('./db/registro.db', (err) => {
@@ -10,6 +11,32 @@ const db = new sqlite3.Database('./db/registro.db', (err) => {
         console.log('Conectado a la base de datos SQLite');
     }
 });
+
+// Configurar el transporte de Nodemailer
+/* const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'correo@gmail.com',
+        pass: 'contraseña'
+    }
+});
+
+// Función para enviar correos
+function enviarCorreo(identificacion, email, accion) {
+    const mailOptions = {
+        from: 'correo@gmail.com',
+        to: email,
+        subject: `Registro de ${accion}`,
+        text: `La persona con ID ${identificacion} ha registrado su ${accion} correctamente.`
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if(error){
+            return console.log('Error al enviar el correo:', error);
+        }
+        console.log('Correo enviado: ' + info.response);
+    });
+} */
 
 // Ruta para registrar ingreso
 router.post('registro/ingreso', (req, res) => {
@@ -25,6 +52,10 @@ router.post('registro/ingreso', (req, res) => {
         if (err) {
             return res.status(500).json({ error: 'Error al registrar ingreso' });
         }
+
+        // Enviar correo de configuración de ingreso
+        /* enviarCorreo(identificacion, email, 'ingreso'); */
+
         res.json({ message: 'Ingreso registrado correctamente' });
     });
 });
@@ -46,6 +77,10 @@ router.post('registro/salida', (req, res) => {
         if (this.changes === 0) {
             return res.status(404).json({ error: 'No se encontró un ingreso pendiente para esta identificación' });
         }
+
+        // Enviar correo de configuración de salida
+        /* enviarCorreo(identificacion, email, 'salida'); */
+
         res.json({ message: 'Salida registrada correctamente' });
     });
 });
